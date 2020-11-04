@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>My First PWA</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#00897B"/>
+  <meta name="description" content="My first PWA"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/materialize.css">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
+</head>
+<body>
+  <!-- Navigasi -->
+  <nav class="orange lighten-2" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo" id="logo-container"><img width="90" height="30" src="logo.jpg"></a>
+      <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+      
+      <ul class="topnav right hide-on-med-and-down"></ul>
+      <ul class="sidenav" id="nav-mobile"></ul>
+    </div>
+  </nav><br>
+  <!-- Akhir Navigasi -->
+  <div class="container" id="body-content"></div>
+
+
+  </div>
+ <!-- Modal Structure -->
+  <div id="login" class="modal">
+    <form>
+    <div class="modal-content">
+      <h4>Login</h4>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">assignment_ind</i>
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">lock</i>
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="reset" class="modal-close waves-effect waves-red btn-flat">Reset</button>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Login</a>
+    </div>
+    </form>
+  </div>
+  <script src="js/materialize.js"></script> 
+  <script src="js/nav.js"></script>
+  <script>
+  // REGISTER SERVICE WORKER
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+      navigator.serviceWorker
+        .register("/service-worker.js")
+        .then(function() {
+          console.log("Pendaftaran ServiceWorker berhasil");
+        })
+        .catch(function() {
+          console.log("Pendaftaran ServiceWorker gagal");
+        });
+    });
+  } else {
+    console.log("ServiceWorker belum didukung browser ini.");
+  }
+</script>
+</body>
+</html>

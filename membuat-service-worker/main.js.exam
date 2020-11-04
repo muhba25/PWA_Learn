@@ -1,0 +1,18 @@
+if (!("serviceWorker" in navigator)) {
+  console.log("Service worker tidak didukung.");
+} else {
+  // navigator.serviceWorker.register("/sw.js").then(function(registration) {
+  //   console.log("Service terdaftar.");
+  // });
+
+  navigator.serviceWorker.register('/sw.js');
+  navigator.serviceWorker.ready.then(function(swRegistration) {
+  	return swRegistration.sync.register('foo');
+  });
+}
+
+//untuk mengontrol permintaan untuk halaman yang berawalan URL /blog/ seperti /blog/andy , /blog/adrian
+
+// navigator.serviceWorker.register('/blog/sw.js');
+
+// navigator.serviceWorker.register('/sw.js', {scope: '/blog/'});
