@@ -1,0 +1,17 @@
+{
+    "name": "Information Football",
+    "short_name": "InfoFootball",
+    "description": "Aplikasi Informasi Sepak Bola",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#1a237e",
+    "theme_color": "#1a237e",
+    "gcm_sender_id": "878395689259",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
